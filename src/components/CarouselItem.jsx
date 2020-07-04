@@ -4,11 +4,16 @@ import { setFavorite, deleteFavorite } from '../actions';
 import '../assets/components/CarouselItem.scss';
 import play from '../assets/static/play.png';
 import mas from '../assets/static/add-image.png';
+import remove from '../assets/static/remove.png';
 
 const CarouselItem = (props) => {
-  const { cover, title, year, contentRating, duration } = props;
+  const { id, cover, title, year, contentRating, duration ,isList} = props;
   const handleSetFavorite = () => {
-    props.setFavorite({ cover, title, year, contentRating, duration });
+    props.setFavorite({ id, cover, title, year, contentRating, duration, isList });
+  };
+
+  const handleDeleteFavorite = (itemId) => {
+    props.deleteFavorite(itemId);
   };
 
   return (
@@ -21,12 +26,23 @@ const CarouselItem = (props) => {
             src={play}
             alt='Play Icon'
           />
-          <img
-            className='carousel-item__details--img'
-            src={mas}
-            alt='Plus Icon'
-            onClick={handleSetFavorite}
-          />
+          {isList ? (
+            <img
+              className='carousel-item__details--img'
+              src={remove}
+              alt='Plus Icon'
+              onClick={() => handleDeleteFavorite(id)}
+            />
+          ) : (
+            <img
+              className='carousel-item__details--img'
+              src={mas}
+              alt='Plus Icon'
+              onClick={handleSetFavorite}
+            />
+          )}
+
+
         </div>
         <p className='carousel-item__details--title'>{title}</p>
         <p className='carousel-item__details--subtitle'>

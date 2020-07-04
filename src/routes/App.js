@@ -8,7 +8,6 @@ const App = () => (
   <BrowserRouter>
     <Route exact path='/' component={Login} />
     <Route exact path='/home' component={Home} />
-
     <Route exact path='/register' component={Register} />
 
   </BrowserRouter>
