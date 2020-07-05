@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
 import '../assets/styles/App.scss';
+import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -12,8 +12,7 @@ import Footer from '../components/Footer';
 const Home = ({ mylist, trends, originals }) => {
 
   return (
-    <div className='App'>
-      <Header />
+    <>
       <Search />
       {mylist.length > 0 && (
         <Categories title='Mi lista'>
@@ -54,9 +53,7 @@ const Home = ({ mylist, trends, originals }) => {
           ))}
         </Carousel>
       </Categories>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 const mapStateToProps = (state) => {
