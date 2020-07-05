@@ -1,3 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -22,13 +27,14 @@ const Login = (props) => {
     event.preventDefault();
     props.loginRequest(form);
     props.history.push('/home');
+
   };
 
   return (
     <section className='login'>
       <section className='login__container'>
         <h2>{title}</h2>
-        <form className='login__container--form' onSubmitCapture={handleSubmit}>
+        <form className='login__container--form' onSubmit={handleSubmit}>
           <input
             name='email'
             className='input'
@@ -43,11 +49,10 @@ const Login = (props) => {
             placeholder='Contraseña'
             onChange={handleInput}
           />
-          <Link to='/home'>
-            <button className='button'>Iniciar sesión</button>
+          <button className='button'>Iniciar sesión</button>
 
-          </Link>
           <div className='login__container--remember-me'>
+
             <label>
               <input type='checkbox' id='cbox1' value='first_checkbox' />
               {' '}
