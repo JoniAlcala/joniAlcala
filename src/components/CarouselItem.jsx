@@ -5,9 +5,10 @@ import '../assets/components/CarouselItem.scss';
 import play from '../assets/static/play.png';
 import mas from '../assets/static/add-image.png';
 import remove from '../assets/static/remove.png';
+import premium from '../assets/static/p.png';
 
 const CarouselItem = (props) => {
-  const { id, cover, title, year, contentRating, duration ,isList} = props;
+  const { id, cover, title, year, contentRating, duration, isList, isPremium } = props;
   const handleSetFavorite = () => {
     props.setFavorite({ id, cover, title, year, contentRating, duration, isList });
   };
@@ -41,7 +42,21 @@ const CarouselItem = (props) => {
               onClick={handleSetFavorite}
             />
           )}
+          {isPremium ? (
+            <img
+              className='carousel-item__details--img'
+              src={premium}
+              alt='Plus Icon'
 
+            />
+          ) : (
+            <img
+              className='carousel-item__details--img'
+              src={mas}
+              alt='Plus Icon'
+
+            />
+          )}
 
         </div>
         <p className='carousel-item__details--title'>{title}</p>

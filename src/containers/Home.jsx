@@ -23,6 +23,7 @@ const Home = ({ mylist, trends, originals }) => {
                 key={item.id}
                 {...item}
                 isList
+
               />
             ))}
 
@@ -36,7 +37,7 @@ const Home = ({ mylist, trends, originals }) => {
             <CarouselItem
               key={item.id}
               {...item}
-              
+
             />
           ))}
         </Carousel>
@@ -48,6 +49,7 @@ const Home = ({ mylist, trends, originals }) => {
             <CarouselItem
               key={item.id}
               {...item}
+              isPremium
             />
           ))}
         </Carousel>
