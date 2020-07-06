@@ -13,6 +13,7 @@ const Home = ({ mylist, trends, originals }) => {
 
   return (
     <>
+      <Header />
       <Search />
       {mylist.length > 0 && (
         <Categories title='Mi lista'>

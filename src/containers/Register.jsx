@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import { registerRequest } from '../actions';
 import '../assets/components/Register.scss';
 
@@ -25,40 +26,42 @@ const Register = (props) => {
   };
 
   return (
-    <section className='register'>
-      <section className='register__container'>
-        <h2>Regístrate</h2>
-        <form className='register__container--form' onSubmit={handleSubmit}>
-          <input
-            name='name'
-            className='input'
-            type='text'
-            placeholder='Nombre'
-            onChange={handleInput}
-          />
+    <>
+      <Header isRegister />
+      <section className='register'>
+        <section className='register__container'>
+          <h2>Regístrate</h2>
+          <form className='register__container--form' onSubmit={handleSubmit}>
+            <input
+              name='name'
+              className='input'
+              type='text'
+              placeholder='Nombre'
+              onChange={handleInput}
+            />
 
-          <input
-            name='email'
-            className='input'
-            type='text'
-            placeholder='Correo'
-            onChange={handleInput}
-          />
-          <input
-            name='contraseña'
-            className='input'
-            type='password'
-            placeholder='Contraseña'
-            onChange={handleInput}
-          />
+            <input
+              name='email'
+              className='input'
+              type='text'
+              placeholder='Correo'
+              onChange={handleInput}
+            />
+            <input
+              name='contraseña'
+              className='input'
+              type='password'
+              placeholder='Contraseña'
+              onChange={handleInput}
+            />
 
-          <button className='button'> Registrarme </button>
+            <button className='button'> Registrarme </button>
 
-        </form>
-        <a href='/'>Iniciar sesión</a>
+          </form>
+          <a href='/'>Iniciar sesión</a>
+        </section>
       </section>
-    </section>
-
+    </>
   );
 };
 
